@@ -1,18 +1,37 @@
 //merging types
 
-type User = {
-  userName: string;
-};
+// using the type keyword
+// type User = {
+//   userName: string;
+// };
 
-type Creds = {
+// type Creds = {
+//   password: string;
+// };
+
+// type Admin = User & Creds;
+
+// let admin: Admin;
+
+// admin = {
+//   userName: "Prajwal",
+//   password: "Test",
+// };
+
+// using the interface keyword
+interface User {
+  username: string;
+}
+
+interface Creds {
   password: string;
-};
+}
 
-type Admin = User & Creds;
+interface Admin extends User, Creds {}
 
 let admin: Admin;
 
 admin = {
-  userName: "Prajwal",
+  username: "Prajwal",
   password: "Test",
 };
