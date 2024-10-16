@@ -1,18 +1,41 @@
-// literal types
+// generic types
 
-type Role = "admin" | "user" | "editor";
+type DataStorage<T> = {
+  storage: T;
+  addFn(data: T): void;
+};
 
-let role: Role;
+type User = {
+  name: string;
+  age: number;
+};
 
-role = "admin";
-role = "user";
+let storageData: DataStorage<string>;
 
-// role = "editor" - error.
+storageData = {
+  storage: "Hello",
+  addFn(data) {
+    this.storage.push(data);
+  },
+};
 
-// adding type guards
+let userStorage: DataStorage<User>;
 
-function performSomething(something: string | number, role: Role) {
-  if (role === "admin" && typeof something === "string") {
-    //...
-  }
+userStorage = {
+  storage: {
+    name: "Prajwal",
+    age: 25,
+  },
+  addFn(user) {
+    this.storage.push(user);
+  },
+};
+
+function merge<T, U>(a: T, b: U) {
+  return {
+    ...a,
+    ...b,
+  };
 }
+
+const data = merge({ name: "Prajwal" }, { age: 25 });
