@@ -14,3 +14,7 @@ firstname = "Prajwal";
 let justString: string;
 let justNumber: number;
 let justBoolean: boolean;
+
+// union of types
+let userId: string | number = "abc123";
+userId = 123;
