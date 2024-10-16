@@ -1,33 +1,19 @@
-//array types
+// custom type or type aliases
 
-let hobbies: Array<string>;
+type StringOrNum = string | number;
 
-hobbies = ["Sports", "Music"];
+type User = {
+  name: string;
+  age: number;
+  id: StringOrNum;
+};
 
-let hobbies2: string[]; // number[], boolean[], {name: string}[]
+type AddFn = (a: number, b: number) => number;
 
-hobbies2 = ["sports"];
+let userId: StringOrNum;
 
-// constant types
-const username = "Prajwal";
+let user: User;
 
-// function argument & return types
-function add(a: number, b: number) {
-  const result = a + b;
-  return result;
-}
-
-function subtract(a: number, b: number): void {
-  const result = a - b;
-  console.log(result);
-}
-
-function calculate(
-  a: number,
-  b: number,
-  addFn: (a: number, b: number) => number
-) {
+function calculate(a: number, b: number, addFn: AddFn) {
   addFn(a, b);
 }
-
-calculate(2, 5, add);
