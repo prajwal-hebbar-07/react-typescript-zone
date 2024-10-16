@@ -17,3 +17,11 @@ let user: User;
 function calculate(a: number, b: number, addFn: AddFn) {
   addFn(a, b);
 }
+
+// using interface to define the type for object
+interface Credentials {
+  email: string;
+  password: string;
+}
+
+let creds: Credentials;
