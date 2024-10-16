@@ -9,3 +9,8 @@ lastname = "Hebbar";
 let firstname: string;
 // firstname = 33 - will throw an error
 firstname = "Prajwal";
+
+// Basic Primitive Types
+let justString: string;
+let justNumber: number;
+let justBoolean: boolean;
