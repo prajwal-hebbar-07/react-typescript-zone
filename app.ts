@@ -1,27 +1,18 @@
-// custom type or type aliases
-
-type StringOrNum = string | number;
+//merging types
 
 type User = {
-  name: string;
-  age: number;
-  id: StringOrNum;
+  userName: string;
 };
 
-type AddFn = (a: number, b: number) => number;
-
-let userId: StringOrNum;
-
-let user: User;
-
-function calculate(a: number, b: number, addFn: AddFn) {
-  addFn(a, b);
-}
-
-// using interface to define the type for object
-interface Credentials {
-  email: string;
+type Creds = {
   password: string;
-}
+};
 
-let creds: Credentials;
+type Admin = User & Creds;
+
+let admin: Admin;
+
+admin = {
+  userName: "Prajwal",
+  password: "Test",
+};
