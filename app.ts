@@ -1,37 +1,8 @@
-//merging types
+// literal types
 
-// using the type keyword
-// type User = {
-//   userName: string;
-// };
+let role: "admin" | "user";
 
-// type Creds = {
-//   password: string;
-// };
+role = "admin";
+role = "user";
 
-// type Admin = User & Creds;
-
-// let admin: Admin;
-
-// admin = {
-//   userName: "Prajwal",
-//   password: "Test",
-// };
-
-// using the interface keyword
-interface User {
-  username: string;
-}
-
-interface Creds {
-  password: string;
-}
-
-interface Admin extends User, Creds {}
-
-let admin: Admin;
-
-admin = {
-  username: "Prajwal",
-  password: "Test",
-};
+// role = "editor" - error.
