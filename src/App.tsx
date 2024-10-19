@@ -4,18 +4,18 @@ import Header from "./components/Header";
 import CourseGoalList from "./components/CourseGoalList";
 import goalImg from "./assets/goals.jpg";
 
-interface CourseGoals {
+export interface CourseGoal {
   title: string;
   description: string;
   id: number;
 }
 
 export default function App() {
-  const [goals, setGoals] = useState<CourseGoals[]>([]);
+  const [goals, setGoals] = useState<CourseGoal[]>([]);
 
   function addGoalHandler() {
     setGoals((prevGoal) => {
-      const goal: CourseGoals = {
+      const goal: CourseGoal = {
         id: Math.random(),
         title: "React + TS",
         description:

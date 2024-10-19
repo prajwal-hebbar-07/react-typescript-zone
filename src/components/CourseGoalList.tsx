@@ -1,14 +1,10 @@
-import { FC } from "react";
+import { type FC } from "react";
+
+import { type CourseGoal as CGoal } from "../App";
 import CourseGoal from "./CourseGoal";
 
-interface CourseGoals {
-  title: string;
-  description: string;
-  id: number;
-}
-
 interface CourseGoalListProps {
-  goals: CourseGoals[];
+  goals: CGoal[];
 }
 
 const CourseGoalList: FC<CourseGoalListProps> = ({ goals }) => {
