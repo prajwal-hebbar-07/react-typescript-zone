@@ -13,8 +13,8 @@ export interface CourseGoal {
 export default function App() {
   const [goals, setGoals] = useState<CourseGoal[]>([]);
 
-  function addGoalHandler() {
-    setGoals((prevGoal) => {
+  function addGoalHandler(): void {
+    setGoals((prevGoals) => {
       const goal: CourseGoal = {
         id: Math.random(),
         title: "React + TS",
@@ -22,8 +22,12 @@ export default function App() {
           "Try react with typescript to make the applications more robust!",
       };
 
-      return [...prevGoal, goal];
+      return [...prevGoals, goal];
     });
+  }
+
+  function deleteGoalHandler(id: number): void {
+    setGoals((prevGoals) => prevGoals.filter((goal) => goal.id !== id));
   }
 
   return (
@@ -32,7 +36,7 @@ export default function App() {
         <h1>React + TS</h1>
       </Header>
       <button onClick={addGoalHandler}>Add Goal</button>
-      <CourseGoalList goals={goals} />
+      <CourseGoalList goals={goals} onDeleteGoal={deleteGoalHandler} />
     </main>
   );
 }
