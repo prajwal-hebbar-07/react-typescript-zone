@@ -2,6 +2,7 @@ import { useState } from "react";
 
 import Header from "./components/Header";
 import CourseGoalList from "./components/CourseGoalList";
+import NewGoal from "./components/NewGoal";
 import goalImg from "./assets/goals.jpg";
 
 export interface CourseGoal {
@@ -35,7 +36,7 @@ export default function App() {
       <Header image={{ src: goalImg, alt: "React + TS" }}>
         <h1>React + TS</h1>
       </Header>
-      <button onClick={addGoalHandler}>Add Goal</button>
+      <NewGoal />
       <CourseGoalList goals={goals} onDeleteGoal={deleteGoalHandler} />
     </main>
   );
